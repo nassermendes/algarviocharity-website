@@ -1,5 +1,9 @@
-Flask==3.0.0
-python-dotenv==1.0.0
-gunicorn==21.2.0
+Flask==3.0.2
+Flask-Bootstrap==3.3.7.1
 Flask-Mail==0.9.1
 Flask-SQLAlchemy==3.1.1
+Jinja2==3.1.2
+SQLAlchemy==2.0.38
+Werkzeug==3.0.1
+gunicorn==21.2.0
+python-dotenv==1.0.0
