@@ -1,8 +1,13 @@
 from flask import Blueprint, render_template, request, jsonify
 from flask_mail import Message
 from app import mail, db
+from datetime import datetime
 
 main = Blueprint('main', __name__)
+
+@main.context_processor
+def inject_now():
+    return {'now': datetime.utcnow()}
 
 @main.route('/')
 def index():
