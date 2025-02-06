@@ -5,53 +5,45 @@
 {% block content %}
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <h2 class="text-center mb-4">Support Our Cause</h2>
+        <h2 class="text-center mb-4">Support Our Mission</h2>
         
         <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h3>Make a Difference Today</h3>
-                <p>Your donation helps us continue our mission of supporting the Algarve community. Every contribution, no matter the size, makes a real difference in someone's life.</p>
+                <p class="lead">Your donation helps us provide essential support to families facing end-of-life care.</p>
                 
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5>One-Time Donation</h5>
-                                <p>Support our cause with a single contribution</p>
-                                <button class="btn btn-primary" onclick="alert('Donation feature coming soon!')">Donate Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5>Monthly Giving</h5>
-                                <p>Become a regular supporter of our mission</p>
-                                <button class="btn btn-primary" onclick="alert('Monthly donation feature coming soon!')">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="mt-4">
+                    <a href="https://www.paypal.com/pools/c/98ZrMibjeo" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="fab fa-paypal me-2"></i>Donate via PayPal
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="card mb-4">
             <div class="card-body">
-                <h3>Where Your Money Goes</h3>
+                <h3>Your Impact</h3>
                 <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li>✓ Food Bank Support</li>
-                            <li>✓ Educational Programs</li>
-                            <li>✓ Community Outreach</li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-gavel fa-3x text-primary mb-2"></i>
+                            <h5>Legal Support</h5>
+                            <p>Fund pro-bono legal assistance for families in need</p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li>✓ Healthcare Initiatives</li>
-                            <li>✓ Emergency Assistance</li>
-                            <li>✓ Youth Programs</li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-heart fa-3x text-primary mb-2"></i>
+                            <h5>Mental Health</h5>
+                            <p>Support counseling and mental health services</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-hands-holding fa-3x text-primary mb-2"></i>
+                            <h5>Funeral Services</h5>
+                            <p>Help provide dignified funeral arrangements</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,23 +52,35 @@
         <div class="card">
             <div class="card-body">
                 <h3>Other Ways to Help</h3>
-                <p>Can't donate money? There are many other ways to support our cause:</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>Volunteer</h5>
-                        <p>Join our team of dedicated volunteers</p>
-                        <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Learn More</a>
+                        <h5><i class="fas fa-share-nodes me-2"></i>Spread the Word</h5>
+                        <p>Follow and share our mission on social media:</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/algarviocharity/" class="btn btn-outline-dark me-2" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.youtube.com/@algarviocharity" class="btn btn-outline-dark me-2" target="_blank">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </a>
+                            <a href="https://www.tiktok.com/@algarviocharity" class="btn btn-outline-dark" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <h5>Spread the Word</h5>
-                        <p>Share our mission with your network</p>
-                        <div class="social-share">
-                            <!-- Add social sharing buttons here -->
-                        </div>
+                        <h5><i class="fas fa-hands-helping me-2"></i>Volunteer</h5>
+                        <p>Join our team of dedicated volunteers and make a difference in your community.</p>
+                        <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}

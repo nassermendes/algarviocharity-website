@@ -4,10 +4,10 @@
 
 {% block content %}
 <div class="jumbotron text-center py-5 bg-light rounded">
-    <h1 class="display-4">Welcome to Algarvio Charity</h1>
-    <p class="lead">Making a difference in the Algarve community through compassion and dedication.</p>
+    <h1 class="display-4">Empowering Families, Honouring Lives</h1>
+    <p class="lead">Welcome to Algarvio Charity, where we provide compassionate support in life's most challenging moments.</p>
     <hr class="my-4">
-    <p>Join us in our mission to help those in need and create positive change.</p>
+    <p>Join us in making a difference by supporting families facing end-of-life care.</p>
     <a class="btn btn-primary btn-lg" href="{{ url_for('main.donate') }}" role="button">Donate Now</a>
 </div>
 
@@ -15,8 +15,8 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Our Mission</h5>
-                <p class="card-text">To provide support and resources to those in need within the Algarve community.</p>
+                <h5 class="card-title">Legal Support</h5>
+                <p class="card-text">We provide pro-bono legal assistance to families in need during difficult times.</p>
                 <a href="{{ url_for('main.about') }}" class="btn btn-outline-primary">Learn More</a>
             </div>
         </div>
@@ -24,20 +24,45 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Current Projects</h5>
-                <p class="card-text">Discover our ongoing initiatives and how you can get involved.</p>
-                <a href="{{ url_for('main.projects') }}" class="btn btn-outline-primary">View Projects</a>
+                <h5 class="card-title">Mental Health Support</h5>
+                <p class="card-text">Access compassionate mental health support services for families and individuals.</p>
+                <a href="{{ url_for('main.projects') }}" class="btn btn-outline-primary">View Services</a>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Get Involved</h5>
-                <p class="card-text">Find out how you can contribute to our cause and make a difference.</p>
+                <h5 class="card-title">Funeral Services</h5>
+                <p class="card-text">Culturally inclusive funeral services ensuring dignity and respect for all.</p>
                 <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Contact Us</a>
             </div>
         </div>
     </div>
 </div>
+
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h3>Connect With Us</h3>
+        <div class="social-links mt-3">
+            <a href="https://www.instagram.com/algarviocharity/" class="btn btn-outline-dark mx-2" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.youtube.com/@algarviocharity" class="btn btn-outline-dark mx-2" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://www.tiktok.com/@algarviocharity" class="btn btn-outline-dark mx-2" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="mailto:algarviocharity@gmail.com" class="btn btn-outline-dark mx-2">
+                <i class="fas fa-envelope"></i> Email Us
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
