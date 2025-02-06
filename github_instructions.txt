@@ -1,0 +1,17 @@
+# After creating the repository on GitHub, run these commands:
+
+# If you want to use HTTPS:
+git remote add origin https://github.com/YourUsername/algarviocharity-website.git
+
+# Or if you prefer SSH:
+git remote add origin git@github.com:YourUsername/algarviocharity-website.git
+
+# Then push your code:
+git branch -M main
+git push -u origin main
+
+# Don't forget to:
+1. Set up branch protection rules
+2. Add a description to your repository
+3. Enable GitHub Pages if you want to show a preview of the static files
+4. Add topics to your repository for better discoverability
