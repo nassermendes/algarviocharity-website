@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
     position: relative;
     min-height: 100vh;
-    background: url('./images/hero-bg.jpg') center/cover no-repeat;
+    background: url('/static/images/hero-bg.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Services Section */
 .services-section {
     padding: 100px 0;
-    background: url('./images/services-bg.jpg') center/cover fixed;
+    background: url('/static/images/services-bg.jpg') center/cover fixed;
     position: relative;
 }
 
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 /* CTA Section */
 .cta-section {
     padding: 100px 0;
-    background: url('./images/cta-bg.jpg') center/cover fixed;
+    background: url('/static/images/cta-bg.jpg') center/cover fixed;
     position: relative;
     text-align: center;
 }
