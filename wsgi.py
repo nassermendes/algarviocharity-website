@@ -11,4 +11,5 @@ if project_home not in sys.path:
 load_dotenv(os.path.join(project_home, '.env'))
 
 # Import your Flask app
-from run import app as application
+from run import app
+application = app  # This is the WSGI callable
