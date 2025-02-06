@@ -3,66 +3,124 @@
 {% block title %}Welcome - Algarvio Charity{% endblock %}
 
 {% block content %}
-<div class="jumbotron text-center py-5 bg-light rounded">
-    <h1 class="display-4">Empowering Families, Honouring Lives</h1>
-    <p class="lead">Welcome to Algarvio Charity, where we provide compassionate support in life's most challenging moments.</p>
-    <hr class="my-4">
-    <p>Join us in making a difference by supporting families facing end-of-life care.</p>
-    <a class="btn btn-primary btn-lg" href="{{ url_for('main.donate') }}" role="button">Donate Now</a>
-</div>
-
-<div class="row mt-5">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Legal Support</h5>
-                <p class="card-text">We provide pro-bono legal assistance to families in need during difficult times.</p>
-                <a href="{{ url_for('main.about') }}" class="btn btn-outline-primary">Learn More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Mental Health Support</h5>
-                <p class="card-text">Access compassionate mental health support services for families and individuals.</p>
-                <a href="{{ url_for('main.projects') }}" class="btn btn-outline-primary">View Services</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Funeral Services</h5>
-                <p class="card-text">Culturally inclusive funeral services ensuring dignity and respect for all.</p>
-                <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Contact Us</a>
-            </div>
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content text-center">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" class="hero-logo">
+            <h1 class="hero-title">ALGARVIO CHARITY</h1>
+            <p class="hero-subtitle">Empowering Families, Honouring Lives</p>
         </div>
     </div>
 </div>
 
-<div class="row mt-5">
-    <div class="col-12 text-center">
-        <h3>Connect With Us</h3>
-        <div class="social-links mt-3">
-            <a href="https://www.instagram.com/algarviocharity/" class="btn btn-outline-dark mx-2" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://www.youtube.com/@algarviocharity" class="btn btn-outline-dark mx-2" target="_blank">
-                <i class="fab fa-youtube"></i> YouTube
-            </a>
-            <a href="https://www.tiktok.com/@algarviocharity" class="btn btn-outline-dark mx-2" target="_blank">
-                <i class="fab fa-tiktok"></i> TikTok
-            </a>
-            <a href="mailto:algarviocharity@gmail.com" class="btn btn-outline-dark mx-2">
-                <i class="fas fa-envelope"></i> Email Us
-            </a>
+<section class="mission-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="mission-content" data-aos="fade-right">
+                    <span class="section-tag">FIND OUT MORE</span>
+                    <h2 class="section-title">EMPOWERING FAMILIES,<br>HONOURING LIVES</h2>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="mission-text" data-aos="fade-left">
+                    <p>Welcome to Algarvio Charity, where we empower families and honour lives by providing compassionate support in life's most challenging moments. Join us in making a difference.</p>
+                    <p>We are dedicated to providing compassionate, dignified support to individuals and families facing end-of-life care, regardless of age, religion, or circumstance. Through pro-bono legal assistance, mental health support, and culturally inclusive funeral services, we strive to ensure that no one faces this journey alone.</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Legal Support</h3>
+                    <p>Pro-bono legal assistance for families in need during difficult times.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Mental Health</h3>
+                    <p>Compassionate mental health support and counseling services.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Funeral Services</h3>
+                    <p>Culturally inclusive and dignified funeral arrangements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <div class="cta-content text-center" data-aos="fade-up">
+            <h2>Make a Difference Today</h2>
+            <p>Your support helps us provide essential services to families in need.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('main.about') }}" class="btn btn-outline-light btn-lg">Learn More</a>
+                <a href="{{ url_for('main.donate') }}" class="btn btn-primary btn-lg">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="connect-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="section-title" data-aos="fade-up">Connect With Us</h2>
+                <div class="social-grid" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.instagram.com/algarviocharity/" class="social-item" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.youtube.com/@algarviocharity" class="social-item" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@algarviocharity" class="social-item" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="mailto:algarviocharity@gmail.com" class="social-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block head %}
-{{ super() }}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+</script>
 {% endblock %}
