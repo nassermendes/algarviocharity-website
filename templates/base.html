@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Algarvio Charity{% endblock %} - Empowering Families, Honouring Lives</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block head %}{% endblock %}
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body class="dark-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('main.index') }}">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" height="60">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" height="60" class="logo-img">
+                <span class="brand-text">Algarvio Charity</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -32,64 +35,70 @@
                         <a class="nav-link" href="{{ url_for('main.contact') }}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-danger text-white" href="{{ url_for('main.donate') }}">Donate</a>
+                        <a class="nav-link btn btn-primary donate-btn" href="{{ url_for('main.donate') }}">Donate</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container my-4">
+    <div class="page-transition"></div>
+
+    <main class="main-content">
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-light py-4 mt-5">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" height="50" class="mb-3">
-                    <p class="mb-0">Empowering Families, Honouring Lives</p>
-                    <small class="text-muted">Supporting families through end-of-life care</small>
+                    <div class="footer-brand">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" height="50" class="mb-3">
+                        <h5>Empowering Families</h5>
+                        <p class="footer-tagline">Supporting families through end-of-life care</p>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ url_for('main.about') }}" class="text-decoration-none">About Us</a></li>
-                        <li><a href="{{ url_for('main.projects') }}" class="text-decoration-none">Our Services</a></li>
-                        <li><a href="{{ url_for('main.contact') }}" class="text-decoration-none">Get Support</a></li>
-                        <li><a href="{{ url_for('main.donate') }}" class="text-decoration-none">Donate</a></li>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('main.about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('main.projects') }}">Our Services</a></li>
+                        <li><a href="{{ url_for('main.contact') }}">Get Support</a></li>
+                        <li><a href="{{ url_for('main.donate') }}">Donate</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5>Connect With Us</h5>
-                    <div class="social-links mb-3">
-                        <a href="https://www.instagram.com/algarviocharity/" class="text-decoration-none me-2" target="_blank">
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/algarviocharity/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.youtube.com/@algarviocharity" class="text-decoration-none me-2" target="_blank">
+                        <a href="https://www.youtube.com/@algarviocharity" target="_blank">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@algarviocharity" class="text-decoration-none me-2" target="_blank">
+                        <a href="https://www.tiktok.com/@algarviocharity" target="_blank">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
-                    <div class="qr-code">
-                        <img src="{{ url_for('static', filename='images/instagram-qr.png') }}" alt="Instagram QR Code" height="100">
+                    <div class="qr-code mt-3">
+                        <img src="{{ url_for('static', filename='images/instagram-qr.png') }}" alt="Instagram QR Code" class="qr-img">
                     </div>
-                    <p class="mt-2 mb-0">
-                        <a href="mailto:algarviocharity@gmail.com" class="text-decoration-none">
-                            <i class="fas fa-envelope me-1"></i>algarviocharity@gmail.com
+                    <div class="contact-info">
+                        <a href="mailto:algarviocharity@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            algarviocharity@gmail.com
                         </a>
-                    </p>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-3">
-                <p class="mb-0">&copy; 2025 Algarvio Charity. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Algarvio Charity. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
