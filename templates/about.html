@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Algarvio Charity{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="text-center mb-4">About Algarvio Charity</h2>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Our Story</h3>
+                <p>Algarvio Charity was founded with a simple yet powerful mission: to make a positive impact in the Algarve community. We believe in the power of collective action and the importance of giving back to our community.</p>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Our Mission</h3>
+                <p>Our mission is to provide support and resources to those in need within the Algarve region. We work tirelessly to:</p>
+                <ul>
+                    <li>Support local families in need</li>
+                    <li>Promote education and skill development</li>
+                    <li>Foster community engagement and volunteering</li>
+                    <li>Create sustainable positive change</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Our Values</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Compassion</h5>
+                        <p>We approach our work with empathy and understanding.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Integrity</h5>
+                        <p>We maintain transparency and accountability in all our actions.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Community</h5>
+                        <p>We believe in the power of working together.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Impact</h5>
+                        <p>We focus on creating lasting positive change.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Get Involved</a>
+            <a href="{{ url_for('main.donate') }}" class="btn btn-warning ms-2">Support Our Cause</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

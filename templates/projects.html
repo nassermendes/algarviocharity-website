@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Our Projects - Algarvio Charity{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-center mb-4">Our Projects</h2>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Food Bank Initiative</h3>
+                        <p class="card-text">Supporting local families with essential food supplies and necessities.</p>
+                        <ul class="list-unstyled">
+                            <li>✓ Weekly food distributions</li>
+                            <li>✓ Partnership with local markets</li>
+                            <li>✓ Emergency food support</li>
+                        </ul>
+                        <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Get Involved</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Education Support</h3>
+                        <p class="card-text">Providing educational resources and support to local students.</p>
+                        <ul class="list-unstyled">
+                            <li>✓ School supplies donation</li>
+                            <li>✓ Tutoring programs</li>
+                            <li>✓ Scholarship opportunities</li>
+                        </ul>
+                        <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Community Outreach</h3>
+                        <p class="card-text">Engaging with the community through various support programs.</p>
+                        <ul class="list-unstyled">
+                            <li>✓ Senior support services</li>
+                            <li>✓ Youth mentorship</li>
+                            <li>✓ Community events</li>
+                        </ul>
+                        <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Volunteer</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Healthcare Access</h3>
+                        <p class="card-text">Improving access to healthcare services in the Algarve region.</p>
+                        <ul class="list-unstyled">
+                            <li>✓ Medical supply donations</li>
+                            <li>✓ Health awareness programs</li>
+                            <li>✓ Medical transportation assistance</li>
+                        </ul>
+                        <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <p class="lead">Want to support our projects?</p>
+            <a href="{{ url_for('main.donate') }}" class="btn btn-warning btn-lg">Donate Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

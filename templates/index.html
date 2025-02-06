@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - Algarvio Charity{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center py-5 bg-light rounded">
+    <h1 class="display-4">Welcome to Algarvio Charity</h1>
+    <p class="lead">Making a difference in the Algarve community through compassion and dedication.</p>
+    <hr class="my-4">
+    <p>Join us in our mission to help those in need and create positive change.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('main.donate') }}" role="button">Donate Now</a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Our Mission</h5>
+                <p class="card-text">To provide support and resources to those in need within the Algarve community.</p>
+                <a href="{{ url_for('main.about') }}" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Current Projects</h5>
+                <p class="card-text">Discover our ongoing initiatives and how you can get involved.</p>
+                <a href="{{ url_for('main.projects') }}" class="btn btn-outline-primary">View Projects</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Get Involved</h5>
+                <p class="card-text">Find out how you can contribute to our cause and make a difference.</p>
+                <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
