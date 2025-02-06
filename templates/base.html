@@ -9,11 +9,10 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('main.index') }}">
-                Algarvio Charity
-                <small class="d-none d-md-inline">Empowering Families, Honouring Lives</small>
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" height="60">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +32,7 @@
                         <a class="nav-link" href="{{ url_for('main.contact') }}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning text-dark" href="{{ url_for('main.donate') }}">Donate</a>
+                        <a class="nav-link btn btn-danger text-white" href="{{ url_for('main.donate') }}">Donate</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>Algarvio Charity</h5>
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Algarvio Charity" height="50" class="mb-3">
                     <p class="mb-0">Empowering Families, Honouring Lives</p>
                     <small class="text-muted">Supporting families through end-of-life care</small>
                 </div>
@@ -63,7 +62,7 @@
                 </div>
                 <div class="col-md-4">
                     <h5>Connect With Us</h5>
-                    <div class="social-links">
+                    <div class="social-links mb-3">
                         <a href="https://www.instagram.com/algarviocharity/" class="text-decoration-none me-2" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
@@ -73,6 +72,9 @@
                         <a href="https://www.tiktok.com/@algarviocharity" class="text-decoration-none me-2" target="_blank">
                             <i class="fab fa-tiktok"></i>
                         </a>
+                    </div>
+                    <div class="qr-code">
+                        <img src="{{ url_for('static', filename='images/instagram-qr.png') }}" alt="Instagram QR Code" height="100">
                     </div>
                     <p class="mt-2 mb-0">
                         <a href="mailto:algarviocharity@gmail.com" class="text-decoration-none">
