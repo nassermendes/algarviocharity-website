@@ -15,5 +15,4 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     
-    SERVER_NAME = 'algarviocharity.org'
     PREFERRED_URL_SCHEME = 'https'
