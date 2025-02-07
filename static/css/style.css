@@ -97,45 +97,70 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
 }
 
-/* Services Section */
-.services-section {
+/* Projects and Services Section */
+.projects-section, .services-section {
     padding: 3rem;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-.services-section .row {
+.projects-section .row, .services-section .row {
     justify-content: center;
     gap: 2rem;
     margin: 0;
 }
 
-.services-section .col-md-4 {
-    padding: 0 2rem;
+.projects-section .col-md-4, .services-section .col-md-4 {
+    padding: 0;
     margin-bottom: 2rem;
     flex: 0 0 calc(33.333% - 2rem);
     max-width: calc(33.333% - 2rem);
 }
 
-.services-section .card {
+.projects-section .card, .services-section .card {
     height: 100%;
     background-color: rgba(30, 30, 30, 0.9);
     border: none;
     border-radius: 12px;
 }
 
-.services-section .card-body {
+.projects-section .card-body, .services-section .card-body {
     padding: 2rem;
 }
 
+.projects-section .card-title, .services-section .card-title {
+    color: #c9a227;
+    margin-bottom: 1rem;
+}
+
+.projects-section .card-text, .services-section .card-text {
+    color: #d4d4d4;
+    margin-bottom: 1.5rem;
+}
+
+.projects-section .list-unstyled, .services-section .list-unstyled {
+    margin-bottom: 2rem;
+}
+
+.projects-section .list-unstyled li, .services-section .list-unstyled li {
+    color: #d4d4d4;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 992px) {
+    .projects-section .col-md-4, .services-section .col-md-4 {
+        flex: 0 0 calc(50% - 2rem);
+        max-width: calc(50% - 2rem);
+    }
+}
+
 @media (max-width: 768px) {
-    .services-section {
+    .projects-section, .services-section {
         padding: 2rem 1rem;
     }
-    .services-section .col-md-4 {
+    .projects-section .col-md-4, .services-section .col-md-4 {
         flex: 0 0 100%;
         max-width: 100%;
-        padding: 0 1rem;
     }
 }
 
