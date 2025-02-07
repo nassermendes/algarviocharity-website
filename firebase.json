@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "public",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "https://nassermendes.pythonanywhere.com"
+      }
+    ]
+  }
+}

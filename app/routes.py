@@ -48,6 +48,6 @@ def contact():
 def donate():
     return render_template('donate.html')
 
-@main.route('/.well-known/acme-challenge/TYKjpIhVL-t2ifwPKMs_HfER7VBl5uP_HgYfBNqEC8qk0nqPphIP3MU50TVDLLDY')
-def acme_challenge():
-    return send_from_directory('.well-known/acme-challenge', 'TYKjpIhVL-t2ifwPKMs_HfER7VBl5uP_HgYfBNqEC8qk0nqPphIP3MU50TVDLLDY')
+@main.route('/.well-known/acme-challenge/<path:filename>')
+def acme_challenge(filename):
+    return send_from_directory('static/.well-known/acme-challenge', filename)
