@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from flask_mail import Message
 from app import mail, db
 from datetime import datetime
@@ -47,3 +47,7 @@ def contact():
 @main.route('/donate')
 def donate():
     return render_template('donate.html')
+
+@main.route('/.well-known/acme-challenge/TYKjpIhVL-t2ifwPKMs_HfER7VBl5uP_HgYfBNqEC8qk0nqPphIP3MU50TVDLLDY')
+def acme_challenge():
+    return send_from_directory('.well-known/acme-challenge', 'TYKjpIhVL-t2ifwPKMs_HfER7VBl5uP_HgYfBNqEC8qk0nqPphIP3MU50TVDLLDY')
