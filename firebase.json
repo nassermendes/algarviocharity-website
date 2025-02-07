@@ -4,8 +4,11 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "https://nassermendes.pythonanywhere.com"
+        "function": "proxyPyAnywhere"
       }
     ]
+  },
+  "functions": {
+    "source": "functions"
   }
 }
