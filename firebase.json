@@ -1,10 +1,11 @@
 {
   "hosting": {
     "public": "public",
-    "rewrites": [
+    "redirects": [
       {
-        "source": "**",
-        "destination": "https://nassermendes.pythonanywhere.com"
+        "source": "/**",
+        "destination": "https://nassermendes.pythonanywhere.com",
+        "type": 301
       }
     ]
   }
