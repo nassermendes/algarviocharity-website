@@ -287,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 .navbar {
-    background-color: var(--background-darker);
+    background-color: rgba(18, 18, 18, 0.95);
     padding: 1rem 0;
     transition: all 0.3s ease;
 }
@@ -295,49 +295,103 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    color: #c9a227 !important;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .navbar-logo {
-    height: 60px;
-    width: auto;
-    transition: transform 0.3s ease;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
 }
 
-.navbar-brand:hover .navbar-logo {
-    transform: scale(1.05);
-}
-
-.navbar-brand span {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
+.navbar-nav {
+    margin-left: auto;
 }
 
 .nav-link {
-    color: var(--text-color) !important;
-    font-weight: 400;
-    padding: 0.5rem 1rem;
+    color: #d4d4d4 !important;
+    margin: 0 0.5rem;
     transition: color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
 }
 
 .nav-link:hover {
-    color: var(--primary-color) !important;
+    color: #c9a227 !important;
 }
 
 .donate-btn {
-    background-color: var(--primary-color);
-    color: var(--background-darker) !important;
-    border-radius: 25px;
+    background-color: #c9a227;
+    color: #121212 !important;
     padding: 0.5rem 1.5rem;
+    border-radius: 25px;
     margin-left: 1rem;
-    transition: all 0.3s ease;
 }
 
 .donate-btn:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
+    background-color: #b08b1f;
+    color: #121212 !important;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(18, 18, 18, 0.95);
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .nav-item {
+        width: auto;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .donate-btn {
+        margin: 0;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: block !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand span {
+        display: none;
+    }
+
+    .navbar-logo {
+        height: 35px;
+        margin-right: 0;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Main Content */
