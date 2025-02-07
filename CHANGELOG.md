@@ -2,6 +2,13 @@
 
 All notable changes to the Algarvio Charity website will be documented in this file.
 
+## [1.3] - 2025-02-07
+### Changed
+- Enhanced About page content with more detailed information
+- Added "How We Operate" section to About page
+- Updated mission statement and values descriptions
+- Refined service descriptions for better clarity
+
 ## [1.2] - 2025-02-07
 ### Changed
 - Updated card background color to #77725b for improved visual consistency
