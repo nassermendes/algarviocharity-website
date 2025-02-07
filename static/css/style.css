@@ -285,6 +285,49 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@media (max-width: 991px) {
+    .main-content {
+        padding-top: 90px;
+    }
+
+    .hero-section {
+        padding: 0;
+        margin: 0;
+        min-height: calc(100vh - 90px);
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-section h1 {
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding-top: 80px;
+    }
+
+    .hero-section {
+        min-height: calc(100vh - 80px);
+    }
+
+    .hero-content {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}
+
 /* Navigation */
 .navbar {
     background-color: rgba(18, 18, 18, 0.95);
@@ -579,27 +622,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile Spacing */
 @media (max-width: 991px) {
-    .main-content {
-        padding-top: 120px;
-    }
-
     .section {
         padding: 3rem 1.5rem;
         margin: 1rem auto;
-    }
-
-    .hero-section {
-        padding: 2rem 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .about-section,
-    .services-section,
-    .contact-section,
-    .projects-section {
-        padding: 2.5rem 1.5rem;
-        margin: 1.5rem auto;
-        max-width: 100%;
     }
 
     .card {
@@ -653,21 +678,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 576px) {
-    .main-content {
-        padding-top: 110px;
-    }
-
     .section {
         padding: 2rem 1.2rem;
         margin: 0.8rem auto;
-    }
-
-    .about-section,
-    .services-section,
-    .contact-section,
-    .projects-section {
-        padding: 2rem 1.2rem;
-        margin: 1.2rem auto;
     }
 
     .card-body {
