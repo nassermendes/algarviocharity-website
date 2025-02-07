@@ -2,6 +2,13 @@
 
 All notable changes to the Algarvio Charity website will be documented in this file.
 
+## [1.4] - 2025-02-07
+### Changed
+- Updated card styling to match dark theme
+- Enhanced card visual appearance with transparent background
+- Improved text colors for better readability
+- Refined card hover effects
+
 ## [1.3] - 2025-02-07
 ### Changed
 - Enhanced About page content with more detailed information

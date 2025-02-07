@@ -7,7 +7,7 @@
     --text-muted: #A0A0A0;
     --background-dark: #121212;
     --background-darker: #0A0A0A;
-    --card-background: #77725b;
+    --card-background: rgba(30, 30, 30, 0.9);
     --border-color: rgba(42, 42, 42, 0.5);
 }
 
@@ -328,24 +328,37 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Cards */
 .card {
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
+    background-color: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(42, 42, 42, 0.5);
     border-radius: 8px;
+    margin-bottom: 30px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    color: #d4d4d4;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card h3, .card h5 {
+    color: #c9a227;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+.card ul li {
+    color: #d4d4d4;
+    margin-bottom: 0.5rem;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.card-title {
-    color: var(--primary-color);
-}
-
-.card-text {
-    color: var(--text-muted);
 }
 
 /* Footer */
