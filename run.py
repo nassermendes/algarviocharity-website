@@ -1,7 +1,12 @@
 from flask import Flask, render_template, send_from_directory
 import os
+from datetime import datetime
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
+
+@app.context_processor
+def inject_now():
+    return {'now': datetime.utcnow()}
 
 @app.route('/')
 def index():
