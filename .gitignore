@@ -61,7 +61,5 @@ yarn-error.log*
 # Heroku
 *.pyc
 staticfiles/
-
-# Firebase
-.firebase/
-firebase-debug.log*
+HRKU-*
+HRKU-*.pub
