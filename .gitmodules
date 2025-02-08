@@ -1,6 +1,3 @@
-[submodule "tools/squarespace"]
-	path = tools/squarespace
-	url = https://github.com/nassermendes/squarespace.github.io.git
 [submodule "tools/template-compiler"]
 	path = tools/template-compiler
 	url = https://github.com/nassermendes/template-compiler.git
