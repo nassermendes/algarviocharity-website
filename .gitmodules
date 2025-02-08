@@ -1,3 +1,1 @@
-[submodule "tools/template-compiler"]
-	path = tools/template-compiler
-	url = https://github.com/nassermendes/template-compiler.git
+# No submodules for Heroku deployment
