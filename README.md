@@ -1,6 +1,10 @@
 # Algarvio Charity Website
 
-A Flask-based website for Algarvio Charity, showcasing our mission, projects, and impact in the community.
+This is the official website for Algarvio Charity, serving the Algarve community.
+
+## About
+
+Algarvio Charity is dedicated to making a positive impact in the Algarve region through various community initiatives and support programs.
 
 ## Project Structure
 
@@ -71,3 +75,11 @@ algarviocharity-website/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## Development
+
+This website is built with HTML, CSS, and JavaScript, hosted on GitHub Pages.
+
+## Contact
+
+For more information, visit [algarviocharity.org](https://algarviocharity.org) or email us at info@algarviocharity.org.
