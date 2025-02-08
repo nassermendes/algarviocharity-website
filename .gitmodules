@@ -1,0 +1,6 @@
+[submodule "tools/squarespace"]
+	path = tools/squarespace
+	url = file:///C:/Users/nasse/OneDrive/Documentos/GitHub/squarespace.github.io
+[submodule "tools/template-compiler"]
+	path = tools/template-compiler
+	url = file:///C:/Users/nasse/OneDrive/Documentos/GitHub/template-compiler
