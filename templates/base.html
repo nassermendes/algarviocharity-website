@@ -30,59 +30,67 @@
         .footer {
             background-color: var(--background-darker);
             border-top: 1px solid var(--border-color);
-            padding: 2rem 0;
-            position: relative;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            padding: 3rem 0 1rem;
+            color: var(--text-color);
         }
 
         .footer-logo {
-            height: 40px;
+            height: 60px;
             width: auto;
+            margin-bottom: 1rem;
         }
 
-        .footer-center {
-            text-align: center;
+        .footer-links {
+            list-style: none;
+            padding: 0;
         }
 
-        .footer-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .footer-links li {
+            margin-bottom: 0.5rem;
         }
 
-        .github-link {
-            display: inline-flex;
-            align-items: center;
+        .footer-links a {
+            color: var(--text-color);
             text-decoration: none;
-            color: var(--text-muted);
             transition: color 0.3s ease;
-            padding: 0.5rem;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.05);
         }
 
-        .github-link:hover {
+        .footer-links a:hover {
             color: var(--primary-color);
-            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .qr-code img {
+            max-width: 150px;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .version {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         .github-logo {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
+            width: 16px;
+            height: 16px;
             opacity: 0.7;
             transition: opacity 0.3s ease;
         }
@@ -91,20 +99,14 @@
             opacity: 1;
         }
 
-        .version {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-        }
-
         @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
+            .footer-bottom {
                 text-align: center;
             }
-
-            .footer-left, .footer-right {
-                justify-content: center;
+            
+            .footer-bottom .d-flex {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -150,19 +152,47 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
+            <div class="row">
+                <div class="col-md-4">
                     <img src="{{ url_for('static', filename='images/Logo.jpg') }}" alt="Algarvio Charity" class="footer-logo">
-                    <div class="copyright">Empowering families and honouring lives through compassionate support.</div>
+                    <p>Empowering families and honouring lives through compassionate support.</p>
                 </div>
-                <div class="footer-center">
-                    <div class="version">v1.4</div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                        <li><a href="{{ url_for('contact') }}">Get Support</a></li>
+                        <li><a href="{{ url_for('donate') }}">Donate</a></li>
+                    </ul>
                 </div>
-                <div class="footer-right">
-                    <a href="https://github.com/nassermendes/algarviocharity-website" target="_blank" class="github-link" title="View on GitHub">
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-logo">
-                        <span class="github-text">GitHub Developer Program</span>
-                    </a>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/algarviocharity/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@algarviocharity" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@algarviocharity" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <div class="qr-code mt-3">
+                        <img src="{{ url_for('static', filename='images/instagram-qr.png') }}" alt="Instagram QR Code" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="mb-0">&copy; 2025 Algarvio Charity. All rights reserved.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="version me-2">v3.2.0</span>
+                        <a href="https://github.com/nassermendes/algarviocharity-website" target="_blank" class="github-link" title="View on GitHub">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDk4IDk2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQ4Ljg1NCAwQzIxLjgzOSAwIDAgMjIgMCA0OS4yMTdjMCAyMS43NTYgMTMuOTkzIDQwLjE3MiAzMy40MDUgNDYuNjkgMi40MjcuNDkgMy4zMTYtMS4wNTkgMy4zMTYtMi4zNjIgMC0xLjE0MS0uMDgtNS4wNTItLjA4LTkuMTI3LTEzLjU5IDIuOTM0LTE2LjQyLTUuODY3LTE2LjQyLTUuODY3LTIuMTg0LTUuNzA0LTUuNDItNy4xNy01LjQyLTcuMTctNC40NDgtMy4wMTUuMzI0LTMuMDE1LjMyNC0zLjAxNSA0LjkzNC4zMjYgNy41MjMgNS4wNTIgNy41MjMgNS4wNTIgNC4zNjcgNy40OTYgMTEuNDA0IDUuMzc4IDE0LjIzNSA0LjA3NC40MDQtMy4xNzggMS42OTktNS4zNzggMy4wNzQtNi42LTEwLjgzOS0xLjE0MS0yMi4yNDMtNS4zNzgtMjIuMjQzLTI0LjI4MyAwLTUuMzc4IDEuOTQtOS43NzggNS4wMTQtMTMuMi0uNDg1LTEuMjIyLTIuMTg0LTYuMjc1LjQ4Ni0xMy4wMzggMCAwIDQuMTI1LTEuMzA0IDEzLjQyNiA1LjA1MmE0Ni45NyA0Ni45NyAwIDAgMSAxMi4yMTQtMS42MyA0Ni45NyA0Ni45NyAwIDAgMSAxMi4yMTUgMS42M2M5LjMtNi4zNTYgMTMuNDI2LTUuMDUyIDEzLjQyNi01LjA1MiAyLjY3IDYuNzYzLjk3IDExLjgxNi40ODYgMTMuMDM4IDMuMTU1IDMuNDIyIDUuMDE1IDcuODIyIDUuMDE1IDEzLjIgMCAxOC45MDUtMTEuNDA0IDIzLjA2LTIyLjMyNCAyNC4yODMgMS43OCAxLjU0OCAzLjMxNiA0LjQ4MSAzLjMxNiA5LjEyNiAwIDYuNi0uMDggMTEuODk3LS4wOCAxMy41MjYgMCAxLjMwNC44ODkgMi44NTMgMy4zMTYgMi4zNjQgMTkuNDEyLTYuNTIgMzMuNDA1LTI0LjkzNSAzMy40MDUtNDYuNjkxQzk3LjcwNyAyMiA3NS43ODggMCA0OC44NTQgMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="GitHub" class="github-logo">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
