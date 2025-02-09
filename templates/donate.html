@@ -14,6 +14,7 @@
                     <!-- PayPal Donation Button -->
                     <div class="paypal-button mb-4">
                         <div id="paypal-button-container"></div>
+                        <input type="number" id="custom-amount" value="10" />
                     </div>
 
                     <div class="donation-info mt-5">
@@ -70,11 +71,13 @@
     }
 </style>
 <!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AZjJas5UOLoQsvuYQSMzPKSX5KcguzVcJwJAYd8Rh9Ghwwd19JWXxu1KmoWB7MKyoIppCVNR1dX-62IB&currency=EUR"></script>
 {% endblock %}
 
 {% block scripts %}
 <script>
+  const customAmountInput = document.getElementById('custom-amount');
+  
   paypal.Buttons({
     style: {
       layout: 'vertical',
@@ -83,22 +86,20 @@
       label: 'donate'
     },
     createOrder: function(data, actions) {
+      const amount = customAmountInput.value || 10;
       return actions.order.create({
         application_context: {
           brand_name: 'Algarvio Charity',
           user_action: 'PAY_NOW'
         },
-        payer: {
-          email_address: 'algarviocharity@gmail.com'
-        },
         purchase_units: [{
           amount: {
             currency_code: 'EUR',
-            value: '10.00',
+            value: amount.toString(),
             breakdown: {
               item_total: {
                 currency_code: 'EUR',
-                value: '10.00'
+                value: amount.toString()
               }
             }
           },
@@ -111,8 +112,16 @@
     onApprove: function(data, actions) {
       return actions.order.capture().then(function(details) {
         alert('Thank you for your donation, ' + details.payer.name.given_name + '!');
+        // Reset amount to default after successful donation
+        customAmountInput.value = '10';
       });
     }
   }).render('#paypal-button-container');
+
+  // Ensure only valid amounts
+  customAmountInput.addEventListener('input', function() {
+    if (this.value < 1) this.value = 1;
+    if (this.value > 50000) this.value = 50000; // PayPal's max limit
+  });
 </script>
 {% endblock %}
