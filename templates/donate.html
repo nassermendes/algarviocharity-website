@@ -7,19 +7,79 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h1 class="section-title mb-4">Make a Difference Today</h1>
-                <p class="lead mb-5">Your donation helps us provide essential support to families in need. Every contribution, no matter the size, makes a meaningful impact in our community.</p>
+                <h2 class="section-title mb-4">Support Our Mission</h2>
                 
-                <div class="donation-options">
-                    <!-- PayPal Donation Button -->
-                    <div class="paypal-button mb-4">
-                        <div id="paypal-button-container"></div>
-                        <input type="number" id="custom-amount" value="10" />
+                <div class="donation-options mb-5">
+                    <!-- Custom Amount Input -->
+                    <div class="custom-amount mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text">£</span>
+                            <input type="number" id="custom-amount" class="form-control" value="10" min="1" step="1" aria-label="Custom donation amount">
+                        </div>
                     </div>
 
-                    <div class="donation-info mt-5">
-                        <h3>Other Ways to Support</h3>
-                        <p>If you prefer to make a direct bank transfer or have questions about other donation methods, please <a href="{{ url_for('contact') }}">contact us</a>.</p>
+                    <!-- PayPal Donation Button -->
+                    <div class="paypal-button-container mb-4">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                </div>
+
+                <!-- Impact Section -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Your Impact</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-gavel fa-3x text-primary mb-2"></i>
+                                    <h5>Legal Support</h5>
+                                    <p>Fund pro-bono legal assistance for families in need</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-heart fa-3x text-primary mb-2"></i>
+                                    <h5>Mental Health</h5>
+                                    <p>Support counseling and mental health services</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-hands-holding fa-3x text-primary mb-2"></i>
+                                    <h5>Funeral Services</h5>
+                                    <p>Help provide dignified funeral arrangements</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Ways to Help -->
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Other Ways to Help</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-share-nodes me-2"></i>Spread the Word</h5>
+                                <p>Follow and share our mission on social media:</p>
+                                <div class="social-links">
+                                    <a href="https://www.instagram.com/algarviocharity/" class="btn btn-outline-dark me-2" target="_blank">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                    <a href="https://www.youtube.com/@algarviocharity" class="btn btn-outline-dark me-2" target="_blank">
+                                        <i class="fab fa-youtube"></i> YouTube
+                                    </a>
+                                    <a href="https://www.tiktok.com/@algarviocharity" class="btn btn-outline-dark" target="_blank">
+                                        <i class="fab fa-tiktok"></i> TikTok
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-hands-helping me-2"></i>Volunteer</h5>
+                                <p>Join our team of dedicated volunteers and make a difference in your community.</p>
+                                <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">Contact Us</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,7 +91,7 @@
 {% block head %}
 <style>
     .donate-section {
-        padding: 120px 0;
+        padding: 80px 0;
         background-color: var(--background-darker);
     }
     
@@ -40,38 +100,79 @@
         padding: 40px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
     }
 
-    .paypal-button {
-        display: inline-block;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
+    .custom-amount {
+        max-width: 250px;
+        margin: 0 auto 30px;
+    }
+
+    .custom-amount .input-group-text {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        border: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .custom-amount .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        font-size: 1.2rem;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .custom-amount .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(200, 169, 126, 0.25);
+        color: var(--text-color);
+    }
+
+    .paypal-button-container {
+        max-width: 400px;
+        margin: 0 auto;
+        transform: scale(1.2);
+        transform-origin: center;
+    }
+
+    .card {
+        background: var(--card-background);
+        border: 1px solid var(--border-color);
+        margin-bottom: 30px;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .social-links .btn {
+        margin: 5px;
         transition: all 0.3s ease;
     }
 
-    .paypal-button:hover {
+    .social-links .btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .donation-info {
-        border-top: 1px solid var(--border-color);
-        padding-top: 30px;
-    }
-
-    .donation-info a {
+    .fa-3x {
         color: var(--primary-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
+        margin-bottom: 1rem;
     }
 
-    .donation-info a:hover {
-        color: var(--accent-color);
+    @media (max-width: 768px) {
+        .paypal-button-container {
+            transform: scale(1.1);
+        }
     }
 </style>
 <!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=AZjJas5UOLoQsvuYQSMzPKSX5KcguzVcJwJAYd8Rh9Ghwwd19JWXxu1KmoWB7MKyoIppCVNR1dX-62IB&currency=EUR"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AZjJas5UOLoQsvuYQSMzPKSX5KcguzVcJwJAYd8Rh9Ghwwd19JWXxu1KmoWB7MKyoIppCVNR1dX-62IB&currency=GBP"></script>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
 
 {% block scripts %}
@@ -83,7 +184,8 @@
       layout: 'vertical',
       color: 'gold',
       shape: 'pill',
-      label: 'donate'
+      label: 'donate',
+      height: 55
     },
     createOrder: function(data, actions) {
       const amount = customAmountInput.value || 10;
@@ -94,11 +196,11 @@
         },
         purchase_units: [{
           amount: {
-            currency_code: 'EUR',
+            currency_code: 'GBP',
             value: amount.toString(),
             breakdown: {
               item_total: {
-                currency_code: 'EUR',
+                currency_code: 'GBP',
                 value: amount.toString()
               }
             }
