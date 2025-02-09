@@ -13,13 +13,7 @@
                 <div class="donation-options">
                     <!-- PayPal Donation Button -->
                     <div class="paypal-button mb-4">
-                        <form action="https://www.paypal.com/donate" method="post" target="_blank">
-                            <input type="hidden" name="business" value="YOUR-PAYPAL-EMAIL@example.com" />
-                            <input type="hidden" name="no_recurring" value="0" />
-                            <input type="hidden" name="currency_code" value="EUR" />
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to donate online!" alt="Donate with PayPal button" />
-                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                        </form>
+                        <div id="paypal-button-container"></div>
                     </div>
 
                     <div class="donation-info mt-5">
@@ -75,4 +69,50 @@
         color: var(--accent-color);
     }
 </style>
+<!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  paypal.Buttons({
+    style: {
+      layout: 'vertical',
+      color: 'gold',
+      shape: 'pill',
+      label: 'donate'
+    },
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        application_context: {
+          brand_name: 'Algarvio Charity',
+          user_action: 'PAY_NOW'
+        },
+        payer: {
+          email_address: 'algarviocharity@gmail.com'
+        },
+        purchase_units: [{
+          amount: {
+            currency_code: 'EUR',
+            value: '10.00',
+            breakdown: {
+              item_total: {
+                currency_code: 'EUR',
+                value: '10.00'
+              }
+            }
+          },
+          description: 'Donation to Algarvio Charity',
+          custom_id: 'DONATION-' + new Date().getTime(),
+          soft_descriptor: 'ALGARVIOCHARITY'
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Thank you for your donation, ' + details.payer.name.given_name + '!');
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
 {% endblock %}
