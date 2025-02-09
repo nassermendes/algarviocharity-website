@@ -3,75 +3,28 @@
 {% block title %}Donate - Algarvio Charity{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-        <h2 class="text-center mb-4">Support Our Mission</h2>
-        
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <h3>Make a Difference Today</h3>
-                <p class="lead">Your donation helps us provide essential support to families facing end-of-life care.</p>
+<div class="donate-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h1 class="section-title mb-4">Make a Difference Today</h1>
+                <p class="lead mb-5">Your donation helps us provide essential support to families in need. Every contribution, no matter the size, makes a meaningful impact in our community.</p>
                 
-                <div class="mt-4">
-                    <a href="https://www.paypal.com/pools/c/98ZrMibjeo" class="btn btn-primary btn-lg" target="_blank">
-                        <i class="fab fa-paypal me-2"></i>Donate via PayPal
-                    </a>
-                </div>
-            </div>
-        </div>
+                <div class="donation-options">
+                    <!-- PayPal Donation Button -->
+                    <div class="paypal-button mb-4">
+                        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                            <input type="hidden" name="business" value="YOUR-PAYPAL-EMAIL@example.com" />
+                            <input type="hidden" name="no_recurring" value="0" />
+                            <input type="hidden" name="currency_code" value="EUR" />
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to donate online!" alt="Donate with PayPal button" />
+                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                        </form>
+                    </div>
 
-        <div class="card mb-4">
-            <div class="card-body">
-                <h3>Your Impact</h3>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="text-center mb-3">
-                            <i class="fas fa-gavel fa-3x text-primary mb-2"></i>
-                            <h5>Legal Support</h5>
-                            <p>Fund pro-bono legal assistance for families in need</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center mb-3">
-                            <i class="fas fa-heart fa-3x text-primary mb-2"></i>
-                            <h5>Mental Health</h5>
-                            <p>Support counseling and mental health services</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center mb-3">
-                            <i class="fas fa-hands-holding fa-3x text-primary mb-2"></i>
-                            <h5>Funeral Services</h5>
-                            <p>Help provide dignified funeral arrangements</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h3>Other Ways to Help</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5><i class="fas fa-share-nodes me-2"></i>Spread the Word</h5>
-                        <p>Follow and share our mission on social media:</p>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/algarviocharity/" class="btn btn-outline-dark me-2" target="_blank">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                            <a href="https://www.youtube.com/@algarviocharity" class="btn btn-outline-dark me-2" target="_blank">
-                                <i class="fab fa-youtube"></i> YouTube
-                            </a>
-                            <a href="https://www.tiktok.com/@algarviocharity" class="btn btn-outline-dark" target="_blank">
-                                <i class="fab fa-tiktok"></i> TikTok
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h5><i class="fas fa-hands-helping me-2"></i>Volunteer</h5>
-                        <p>Join our team of dedicated volunteers and make a difference in your community.</p>
-                        <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">Contact Us</a>
+                    <div class="donation-info mt-5">
+                        <h3>Other Ways to Support</h3>
+                        <p>If you prefer to make a direct bank transfer or have questions about other donation methods, please <a href="{{ url_for('contact') }}">contact us</a>.</p>
                     </div>
                 </div>
             </div>
@@ -81,6 +34,45 @@
 {% endblock %}
 
 {% block head %}
-{{ super() }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    .donate-section {
+        padding: 120px 0;
+        background-color: var(--background-darker);
+    }
+    
+    .donation-options {
+        background: var(--card-background);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .paypal-button {
+        display: inline-block;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .paypal-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .donation-info {
+        border-top: 1px solid var(--border-color);
+        padding-top: 30px;
+    }
+
+    .donation-info a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .donation-info a:hover {
+        color: var(--accent-color);
+    }
+</style>
 {% endblock %}
