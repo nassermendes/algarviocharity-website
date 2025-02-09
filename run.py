@@ -10,11 +10,7 @@ def inject_now():
 
 @app.route('/')
 def index():
-    # Try to render index.html from the templates folder; if not available, serve the static file
-    if os.path.exists(os.path.join(app.template_folder, 'index.html')):
-        return render_template('index.html')
-    else:
-        return send_from_directory('.', 'index.html')
+    return render_template('index.html')
 
 @app.route('/about')
 def about():
@@ -32,15 +28,9 @@ def contact():
 def donate():
     return render_template('donate.html')
 
-@app.route('/<path:path>')
-def serve_static(path):
-    # Serve static files, if available, else 404
-    if os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    elif os.path.exists(path):
-        return send_from_directory('.', path)
-    else:
-        return "Not Found", 404
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(app.static_folder, filename)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
