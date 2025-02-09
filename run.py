@@ -1,8 +1,10 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, redirect, request, url_for, send_from_directory
+from flask_talisman import Talisman
 import os
 from datetime import datetime
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
+Talisman(app, force_https=True)
 
 @app.context_processor
 def inject_now():
