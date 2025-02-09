@@ -7,11 +7,47 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 
 # Configure Talisman with less restrictive CSP
 csp = {
-    'default-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\'', 'https:', 'data:'],
-    'img-src': ['\'self\'', 'data:', 'https:'],
-    'script-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\'', 'https:'],
-    'style-src': ['\'self\'', '\'unsafe-inline\'', 'https:'],
-    'font-src': ['\'self\'', 'data:', 'https:'],
+    'default-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        '\'unsafe-eval\'',
+        'https:',
+        'data:'
+    ],
+    'img-src': [
+        '\'self\'',
+        'data:',
+        'https:'
+    ],
+    'script-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        '\'unsafe-eval\'',
+        'https:',
+        'https://cdn.jsdelivr.net',
+        'https://unpkg.com',
+        'https://cdnjs.cloudflare.com'
+    ],
+    'style-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'https:',
+        'https://fonts.googleapis.com',
+        'https://cdn.jsdelivr.net',
+        'https://unpkg.com',
+        'https://cdnjs.cloudflare.com'
+    ],
+    'font-src': [
+        '\'self\'',
+        'data:',
+        'https:',
+        'https://fonts.gstatic.com',
+        'https://cdnjs.cloudflare.com'
+    ],
+    'connect-src': [
+        '\'self\'',
+        'https:'
+    ]
 }
 
 Talisman(app,
