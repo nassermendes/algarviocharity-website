@@ -4,7 +4,21 @@ import os
 from datetime import datetime
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-Talisman(app, force_https=True)
+
+# Configure Talisman with less restrictive CSP
+csp = {
+    'default-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\'', 'https:', 'data:'],
+    'img-src': ['\'self\'', 'data:', 'https:'],
+    'script-src': ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\'', 'https:'],
+    'style-src': ['\'self\'', '\'unsafe-inline\'', 'https:'],
+    'font-src': ['\'self\'', 'data:', 'https:'],
+}
+
+Talisman(app,
+         force_https=True,
+         content_security_policy=csp,
+         content_security_policy_nonce_in=['script-src'],
+         feature_policy=None)
 
 @app.context_processor
 def inject_now():
